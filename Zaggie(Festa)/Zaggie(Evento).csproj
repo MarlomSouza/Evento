@@ -109,6 +109,18 @@
     <Compile Include="Migrations\201703200322007_Criacao modelo.Designer.cs">
       <DependentUpon>201703200322007_Criacao modelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703210303395_Editando Evento.cs" />
+    <Compile Include="Migrations\201703210303395_Editando Evento.Designer.cs">
+      <DependentUpon>201703210303395_Editando Evento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703210322027_criando tabela fracas.cs" />
+    <Compile Include="Migrations\201703210322027_criando tabela fracas.Designer.cs">
+      <DependentUpon>201703210322027_criando tabela fracas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703210328225_criacao tabela fraca.cs" />
+    <Compile Include="Migrations\201703210328225_criacao tabela fraca.Designer.cs">
+      <DependentUpon>201703210328225_criacao tabela fraca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Item.cs" />
@@ -132,6 +144,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703200322007_Criacao modelo.resx">
       <DependentUpon>201703200322007_Criacao modelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703210303395_Editando Evento.resx">
+      <DependentUpon>201703210303395_Editando Evento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703210322027_criando tabela fracas.resx">
+      <DependentUpon>201703210322027_criando tabela fracas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703210328225_criacao tabela fraca.resx">
+      <DependentUpon>201703210328225_criacao tabela fraca.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

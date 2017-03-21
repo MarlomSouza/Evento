@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
@@ -16,7 +17,15 @@ namespace Zaggie_Festa_.Controllers
         // GET: api/Eventos
         public IQueryable<Evento> GetEventos()
         {
+            db.Configuration.ProxyCreationEnabled = false;
             return db.Eventos;
+        }
+
+        // GET: api/Eventos
+        public IQueryable<Evento> GetEventos(int donoEventoId)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            return db.Eventos.Where(e => e.DonoEventoId.Equals(donoEventoId));
         }
 
         // GET: api/Eventos/5

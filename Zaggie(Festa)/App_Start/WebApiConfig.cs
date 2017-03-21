@@ -21,6 +21,11 @@ namespace Zaggie_Festa_
             config.Routes.MapHttpRoute(
               name: "Login",
               routeTemplate: "{controller}/{email}/{senha}"
+            );
+
+            config.Routes.MapHttpRoute(
+            name: "ObterEventosPorDono",
+            routeTemplate: "{controller}/{donoEventoId}"
           );
 
             config.Routes.MapHttpRoute(

@@ -7,12 +7,16 @@ namespace Zaggie_Festa_.Models
 {
     public class Usuario
     {
+        public Usuario()
+        {
+            this.Eventos = new HashSet<Evento>();
+        }
+
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public List<Evento> Eventos { get; set; }
-        public List<Evento> Participando { get; set; }
+        public virtual ICollection<Evento> Eventos { get; set; }
     }
 }
