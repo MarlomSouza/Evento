@@ -10,7 +10,7 @@ using Zaggie_Festa_.Models;
 
 namespace Zaggie_Festa_.Controllers
 {
-    public class UsuariosController : ApiController
+    public class UsuarioController : ApiController
     {
         private DataContext db = new DataContext();
 

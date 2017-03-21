@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
@@ -9,53 +10,52 @@ using Zaggie_Festa_.Models;
 
 namespace Zaggie_Festa_.Controllers
 {
-    public class ItensController : ApiController
+    public class EventoController : ApiController
     {
         private DataContext db = new DataContext();
 
-        // GET: api/Itens
-        public IQueryable<Item> GetItens()
+        // GET: api/Eventos
+        public IQueryable<Evento> GetEventos()
         {
             db.Configuration.ProxyCreationEnabled = false;
-            return db.Itens;
+            return db.Eventos;
         }
 
-        // GET: api/Itens
-        public IQueryable<Item> GetItens(int eventoId)
+        // GET: api/Eventos
+        public IQueryable<Evento> GetEventos(int donoEventoId)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            return db.Itens.Where(i => i.EventoId.Equals(eventoId));
+            return db.Eventos.Where(e => e.DonoEventoId.Equals(donoEventoId));
         }
 
-
-        // GET: api/Itens/5
-        [ResponseType(typeof(Item))]
-        public IHttpActionResult GetItem(int id)
+        // GET: api/Eventos/5
+        [ResponseType(typeof(Evento))]
+        public IHttpActionResult GetEvento(int id)
         {
-            Item item = db.Itens.Find(id);
-            if (item == null)
+            Evento evento = db.Eventos.Find(id);
+            if (evento == null)
             {
                 return NotFound();
             }
 
-            return Ok(item);
+            return Ok(evento);
         }
 
-        // PUT: api/Itens/5
+        // PUT: api/Eventos/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutItem(int id, Item item)
+        public IHttpActionResult PutEvento(int id, Evento evento)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != item.Id)
+            if (id != evento.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(item).State = EntityState.Modified;
+            db.Entry(evento).State = EntityState.Modified;
 
             try
             {
@@ -63,7 +63,7 @@ namespace Zaggie_Festa_.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ItemExists(id))
+                if (!EventoExists(id))
                 {
                     return NotFound();
                 }
@@ -76,35 +76,35 @@ namespace Zaggie_Festa_.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Itens
-        [ResponseType(typeof(Item))]
-        public IHttpActionResult PostItem(Item item)
+        // POST: api/Eventos
+        [ResponseType(typeof(Evento))]
+        public IHttpActionResult PostEvento(Evento evento)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Itens.Add(item);
+            db.Eventos.Add(evento);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = item.Id }, item);
+            return CreatedAtRoute("DefaultApi", new { id = evento.Id }, evento);
         }
 
-        // DELETE: api/Itens/5
-        [ResponseType(typeof(Item))]
-        public IHttpActionResult DeleteItem(int id)
+        // DELETE: api/Eventos/5
+        [ResponseType(typeof(Evento))]
+        public IHttpActionResult DeleteEvento(int id)
         {
-            Item item = db.Itens.Find(id);
-            if (item == null)
+            Evento evento = db.Eventos.Find(id);
+            if (evento == null)
             {
                 return NotFound();
             }
 
-            db.Itens.Remove(item);
+            db.Eventos.Remove(evento);
             db.SaveChanges();
 
-            return Ok(item);
+            return Ok(evento);
         }
 
         protected override void Dispose(bool disposing)
@@ -116,9 +116,9 @@ namespace Zaggie_Festa_.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ItemExists(int id)
+        private bool EventoExists(int id)
         {
-            return db.Itens.Count(e => e.Id == id) > 0;
+            return db.Eventos.Count(e => e.Id == id) > 0;
         }
     }
 }
