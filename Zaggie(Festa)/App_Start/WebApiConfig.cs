@@ -24,9 +24,15 @@ namespace Zaggie_Festa_
             );
 
             config.Routes.MapHttpRoute(
-            name: "ObterEventosPorDono",
-            routeTemplate: "{controller}/{donoEventoId}"
-          );
+                name: "ObterEventosPorDono",
+                routeTemplate: "{controller}/{donoEventoId}"
+             );
+
+            config.Routes.MapHttpRoute(
+                name: "ObterItemPorEvento",
+                routeTemplate: "{controller}/{eventoId}"
+            );
+
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

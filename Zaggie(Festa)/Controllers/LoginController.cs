@@ -29,7 +29,6 @@ namespace Zaggie.Controllers
             return Ok(usuario);
         }
 
-
         // POST: api/Login
         public IHttpActionResult PostForgot_password([FromBody]Usuario usuario)
         {
@@ -50,7 +49,6 @@ namespace Zaggie.Controllers
             }
             return BadRequest("Email não existe na base!");
         }
-
 
         ///// <summary>
         ///// Método responsável pela recuperação de senhas

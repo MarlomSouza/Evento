@@ -16,8 +16,17 @@ namespace Zaggie_Festa_.Controllers
         // GET: api/Itens
         public IQueryable<Item> GetItens()
         {
+            db.Configuration.ProxyCreationEnabled = false;
             return db.Itens;
         }
+
+        // GET: api/Itens
+        public IQueryable<Item> GetItens(int eventoId)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            return db.Itens.Where(i => i.EventoId.Equals(eventoId));
+        }
+
 
         // GET: api/Itens/5
         [ResponseType(typeof(Item))]

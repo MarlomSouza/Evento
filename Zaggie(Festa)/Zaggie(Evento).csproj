@@ -121,6 +121,10 @@
     <Compile Include="Migrations\201703210328225_criacao tabela fraca.Designer.cs">
       <DependentUpon>201703210328225_criacao tabela fraca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703211927050_ajuste .cs" />
+    <Compile Include="Migrations\201703211927050_ajuste .Designer.cs">
+      <DependentUpon>201703211927050_ajuste .cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Item.cs" />
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703210328225_criacao tabela fraca.resx">
       <DependentUpon>201703210328225_criacao tabela fraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703211927050_ajuste .resx">
+      <DependentUpon>201703211927050_ajuste .cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
