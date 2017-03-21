@@ -17,6 +17,7 @@ namespace Zaggie_Festa_.Controllers
         // GET: api/Usuarios
         public IQueryable<Usuario> GetUsuarios()
         {
+            db.Configuration.ProxyCreationEnabled = false;
             return db.Usuarios;
         }
 
